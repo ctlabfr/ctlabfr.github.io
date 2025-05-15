@@ -1,11 +1,9 @@
 ---
 title: "Git CheatSheet"
-createddate: 2025-05-15
-updateddate: 2025-05-15
+date: 2025-05-15
 description: "Un aide-mémoire des commandes git essentielles"
-language: "tous"
-application: "git"
 author: "Christophe"
+tools: "git"
 ---
 
 ## Initialisation d'un repository git
@@ -14,7 +12,6 @@ git init .
 git config user.name "Nom Utilisateur"
 git config user.email "email@utilisateur"
 ```
-
 
 ## Branches
 
