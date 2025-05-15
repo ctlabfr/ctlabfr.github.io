@@ -3,6 +3,7 @@ title: "Git CheatSheet"
 description: "Un aide-mémoire des commandes git essentielles"
 author: "Christophe"
 tools: "git"
+date: 2025-05-15
 ---
 
 ## Initialisation d'un repository git
