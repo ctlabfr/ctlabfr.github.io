@@ -12,7 +12,7 @@ const posts = await getCollection("code", ({ data }) => !data.draft);
     {
       posts.map(({ slug, data }) => (
         <li>
-          {data.date.toLocaleDateString()} -
+          {data.date.toLocaleDateString("fr-FR")}-
           <a href={`/code/${slug}/`}>
             <strong>{data.title}</strong>
           </a>
