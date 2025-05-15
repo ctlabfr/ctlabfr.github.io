@@ -1,0 +1,35 @@
+---
+import Header from "../components/Header.astro";
+import Nav from "../components/Nav.astro";
+
+// Définissez les liens pour le menu
+const links = [
+  { href: "/", label: "Accueil" },
+  { href: "/code", label: "Code" },
+
+];
+const { title } = Astro.props; // Permet de passer un titre personnalisé à chaque page
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CTLab.fr</title>
+  </head>
+  <body>
+    <Header />
+    <Nav links={links} />
+
+    <main>
+      <slot />
+      <!-- Le contenu spécifique à chaque page sera injecté ici -->
+    </main>
+
+    <footer>
+      <p>&copy; 2025 ctlab.fr. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

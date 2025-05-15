@@ -1,0 +1,44 @@
+---
+// src/pages/sysadmin/[...slug].astro
+import { getCollection, getEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  // Récupère TOUTES les entrées de la collection 'sysadmin'
+  const entries = await getCollection("code");
+  console.log(
+    "Slugs générés 1 :",
+    entries.map((entry) => entry.slug)
+  ); // Ajoutez cette ligne
+  // Retourne un tableau d'objets
+  return entries.map((entry) => ({
+    // entry.slug est une string du type "zabbix/monitoring"
+    params: { slug: entry.slug },
+  }));
+}
+
+// const slugParts = (Astro.params as { slug: string[] }).slug;
+// console.log("Astro.params.slug :", slugParts);
+// const slug = slugParts.join("/"); // "zabbix/monitoring"
+const slug = Astro.params.slug;
+console.log(`Slug généré 3 : ${slug}`);
+const entry = await getEntry("code", slug);
+
+if (!entry) {
+  console.log(`Slug introuvable : ${slug}`);
+  throw new Error(`Article introuvable : ${slug}`);
+}
+
+const { Content } = await entry.render();
+const { data } = entry;
+---
+
+<BaseLayout title="{data.title}">
+  <article>
+    <h1>{data.title}</h1>
+    <p><small>Publié le {data.date.toLocaleDateString("fr-FR")}</small></p>
+    <p>{data.description}</p>
+    <hr />
+    <Content />
+  </article>
+</BaseLayout>

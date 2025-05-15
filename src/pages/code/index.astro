@@ -1,0 +1,24 @@
+---
+// src/pages/blog/index.astro
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+// On récupère tous les articles de la collection "blog"
+const posts = await getCollection("code", ({ data }) => !data.draft);
+---
+
+<BaseLayout title="Accueil">
+  <h1></h1>
+  <ul>
+    {
+      posts.map(({ slug, data }) => (
+        <li>
+          {data.date.toLocaleDateString()} -
+          <a href={`/code/${slug}/`}>
+            <strong>{data.title}</strong>
+          </a>
+          {/* <p>{data.description}</p> */}
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
