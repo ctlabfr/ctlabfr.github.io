@@ -27,8 +27,6 @@ jobs:
           version: 10 # ou la version que tu utilises localement
           run_install: false
 
-      - name: Install dependencies
-        run: pnpm install
 
       - name: Build the site
         run: pnpm run build
