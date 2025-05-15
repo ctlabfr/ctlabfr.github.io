@@ -1,6 +1,5 @@
 ---
 title: "Git CheatSheet"
-date: 2025-05-15
 description: "Un aide-mémoire des commandes git essentielles"
 author: "Christophe"
 tools: "git"
