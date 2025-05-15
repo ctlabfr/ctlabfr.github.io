@@ -33,3 +33,9 @@ git checkout -d nouvelle_branche
 git checkout nouvelle_branche
 ```
 
+**Merge une branche avec main**
+```bash
+git checkout main
+git merge nouvelle_branche
+```
+
