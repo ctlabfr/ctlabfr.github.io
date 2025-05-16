@@ -3,6 +3,7 @@ title: "Git CheatSheet"
 description: "Un aide-mémoire des commandes git essentielles"
 createddate: 2025-05-15
 author: "Christophe"
+status: "published"
 
 # updateddate: 
 # language: 
@@ -10,7 +11,6 @@ author: "Christophe"
 application: "git"
 level: "beginner"
 documenttype: "cheatsheet"
-status: "published"
 ---
 
 ## Initialisation d'un repository git

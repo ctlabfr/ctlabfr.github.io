@@ -3,7 +3,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 // On récupère tous les articles de la collection "blog"
-const posts = await getCollection("code", ({ data }) => !data.draft);
+const posts = await getCollection("code", ({ data }) => data.status !== "draft");
 ---
 
 <BaseLayout title="Accueil">
@@ -12,7 +12,7 @@ const posts = await getCollection("code", ({ data }) => !data.draft);
     {
       posts.map(({ slug, data }) => (
         <li>
-          {data.date.toLocaleDateString("fr-FR")}-
+          {data.createddate.toLocaleDateString("fr-FR")}-
           <a href={`/code/${slug}/`}>
             <strong>{data.title}</strong>
           </a>
