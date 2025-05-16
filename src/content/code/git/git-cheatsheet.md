@@ -1,9 +1,16 @@
 ---
 title: "Git CheatSheet"
 description: "Un aide-mémoire des commandes git essentielles"
+createddate: 2025-05-15
 author: "Christophe"
-tools: "git"
-date: 2025-05-15
+
+# updateddate: 
+# language: 
+# framework: 
+application: "git"
+level: "beginner"
+documenttype: "cheatsheet"
+status: "published"
 ---
 
 ## Initialisation d'un repository git

@@ -8,14 +8,14 @@ const code = defineCollection({
     description: z.string(),
     createddate: z.date(),
     author: z.string(),
+    status: z.enum(["draft", "published"]),
     // Optional fields
     updateddate: z.date().optional(),
+    documenttype: z.enum(["cheatsheet", "tutorial", "blog"]).optional(),
     language: z.enum(["javascript", "html", "css"]).optional(),
     framework: z.enum(["astro"]).optional(),
     application: z.enum(["git"]).optional(),
     level: z.enum(["beginner", "intermediate", "advanced"]).optional(),
-    documenttype: z.enum(["cheatsheet", "tutorial", "blog"]).optional(),  
-    status: z.enum(["draft", "published"]).optional(),
   }),
 });
 
