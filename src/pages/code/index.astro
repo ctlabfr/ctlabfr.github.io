@@ -3,7 +3,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 // On récupère tous les articles de la collection "blog"
-const posts = await getCollection("code", ({ data }) => data.status !== "draft");
+const posts = await getCollection("code", ({ data }) => data.status == "published");
 ---
 
 <BaseLayout title="Accueil">
