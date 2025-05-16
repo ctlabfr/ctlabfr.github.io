@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig, passthroughImageService } from "astro/config";
 import astroExpressiveCode from "astro-expressive-code";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +15,10 @@ export default defineConfig({
         showCopyToClipboardButton: true,
       },
     }),
+    mdx(),
   ],
-  image: {
-    service: passthroughImageService(),
-  },
+  // image: {
+  //   service: passthroughImageService(),
+  // },
+  // Add more config options here if needed
 });
